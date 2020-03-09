@@ -1,4 +1,4 @@
-package com.handsome.leave.model;
+package com.handsome.leave.entity;
 
 /**
  * Instructor
@@ -7,7 +7,7 @@ package com.handsome.leave.model;
  * @date 2020年 03月08日 16:39:33
  */
 public class Instructor {
-	
+
 	private long instructorId;
 
 	private String instructorName;
@@ -46,5 +46,15 @@ public class Instructor {
 
 	public void setInstructorPassword(String instructorPassword) {
 		this.instructorPassword = instructorPassword;
+	}
+
+	@Override
+	public String toString() {
+		return "Instructor{" +
+				"instructorId=" + instructorId +
+				", instructorName='" + instructorName + '\'' +
+				", instructorAccount='" + instructorAccount + '\'' +
+				", instructorPassword='" + instructorPassword + '\'' +
+				'}';
 	}
 }

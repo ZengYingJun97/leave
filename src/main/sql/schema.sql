@@ -26,14 +26,14 @@ create table student (
     `student_name` varchar(20) not null comment '学生姓名',
     `student_account` varchar(20) not null comment '学生账号',
     `student_password` varchar(20) not null comment '学生密码',
-    `student_instructor_id` bigint not null comment '辅导员id',
+    `instructor_id` bigint not null comment '辅导员id',
     primary key (student_id),
-    foreign key (student_instructor_id) references instructor(instructor_id)
+    foreign key (instructor_id) references instructor(instructor_id)
 )engine = innodb charset = utf8 comment '学生表';
 
 #student表插入数据
 insert into
-    student(student_name, student_account, student_password, student_instructor_id)
+    student(student_name, student_account, student_password, instructor_id)
 values
     ('花朵1号', 'std0000001', '123456', 1),
     ('花朵2号', 'std0000002', '123456', 1),

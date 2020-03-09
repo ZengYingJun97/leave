@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.handsome.leave.dao.InstructorDao">
+    
+    <select id="queryAll" resultType="com.handsome.leave.entity.Instructor">
+        select
+            instructor_id, instructor_name, instructor_account, instructor_password
+        from
+            instructor
+    </select>
+
+    <select id="queryByInstructorId" resultType="com.handsome.leave.entity.Instructor">
+        select
+            instructor_id, instructor_name, instructor_account, instructor_password
+        from
+            instructor
+        where
+            instructor_id = #{instructorId}
+    </select>
+
+    <update id="updateByInstructor" parameterType="com.handsome.leave.entity.Instructor">
+        update instructor
+        <set>
+            <if test="instructorName != null">instructor_name = #{instructorName},</if>
+            <if test="instructorAccount != null">instructor_account = #{instructorAccount},</if>
+            <if test="instructorPassword != null">instructor_password = #{instructorPassword},</if>
+        </set>
+        where instructor_id = #{instructorId}
+    </update>
+
+    <insert id="insertByInstructor" parameterType="com.handsome.leave.entity.Instructor"
+    useGeneratedKeys="true" keyColumn="instructor_id" keyProperty="instructorId">
+        insert into
+            instructor(instructor_name, instructor_account, instructor_password)
+        value
+            (#{instructorName}, #{instructorAccount}, #{instructorPassword})
+    </insert>
+</mapper>

@@ -1,4 +1,4 @@
-package com.handsome.leave.model;
+package com.handsome.leave.entity;
 
 /**
  * Student
@@ -16,9 +16,7 @@ public class Student {
 
 	private String studentPassword;
 
-	private long instructorId;
-
-	private String instructName;
+	private Instructor instructor;
 
 	public long getStudentId() {
 		return studentId;
@@ -52,19 +50,22 @@ public class Student {
 		this.studentPassword = studentPassword;
 	}
 
-	public long getInstructorId() {
-		return instructorId;
+	public Instructor getInstructor() {
+		return instructor;
 	}
 
-	public void setInstructorId(long instructorId) {
-		this.instructorId = instructorId;
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
 	}
 
-	public String getInstructName() {
-		return instructName;
-	}
-
-	public void setInstructName(String instructName) {
-		this.instructName = instructName;
+	@Override
+	public String toString() {
+		return "Student{" +
+				"studentId=" + studentId +
+				", studentName='" + studentName + '\'' +
+				", studentAccount='" + studentAccount + '\'' +
+				", studentPassword='" + studentPassword + '\'' +
+				", instructor=" + instructor +
+				'}';
 	}
 }
