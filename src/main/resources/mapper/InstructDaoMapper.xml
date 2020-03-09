@@ -4,14 +4,14 @@
     
     <select id="queryAll" resultType="com.handsome.leave.entity.Instructor">
         select
-            instructor_id, instructor_name, instructor_account, instruct_password
+            instructor_id, instructor_name, instructor_account, instructor_password
         from
             instructor
     </select>
 
     <select id="queryByInstructorId" resultType="com.handsome.leave.entity.Instructor">
         select
-            instructor_id, instructor_name, instructor_account, instruct_password
+            instructor_id, instructor_name, instructor_account, instructor_password
         from
             instructor
         where

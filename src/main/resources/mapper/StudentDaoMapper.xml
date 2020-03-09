@@ -5,15 +5,15 @@
     <select id="queryAll" resultType="com.handsome.leave.entity.Student">
         select
             s.student_id, s.student_name, s.student_account, s.student_password, s.instructor_id,
-            i.instructor_id as "instructor.instructorId", i.instructor_name as "instructorName"
+            i.instructor_id as "instructor.instructorId", i.instructor_name as "instructor.instructorName"
         from student s
             inner join instructor i on s.instructor_id = i.instructor_id
     </select>
 
-    <select id="queryAll" resultType="com.handsome.leave.entity.Student">
+    <select id="queryByStudentId" resultType="com.handsome.leave.entity.Student">
         select
             s.student_id, s.student_name, s.student_account, s.student_password, s.instructor_id,
-            i.instructor_id as "instructor.instructorId", i.instructor_name as "instructorName"
+            i.instructor_id as "instructor.instructorId", i.instructor_name as "instructor.instructorName"
         from student s
                  inner join instructor i on s.instructor_id = i.instructor_id
         where

@@ -50,7 +50,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
+			<artifactId>druid-spring-boot-starter</artifactId>
 			<version>1.1.21</version>
 		</dependency>
 
@@ -60,11 +60,17 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- 4）activity工作引擎依赖 -->
+		<!-- 4）activiti工作引擎依赖 -->
+		<dependency>
+			<groupId>org.activiti.dependencies</groupId>
+			<artifactId>activiti-dependencies</artifactId>
+			<version>7.1.0.M1</version>
+			<type>pom</type>
+		</dependency>
 		<dependency>
 			<groupId>org.activiti</groupId>
-			<artifactId>activiti-spring-boot-starter-basic</artifactId>
-			<version>6.0.0</version>
+			<artifactId>activiti-spring-boot-starter</artifactId>
+			<version>7.1.0.M1</version>
 		</dependency>
 
 	</dependencies>
