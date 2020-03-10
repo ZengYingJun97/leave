@@ -33,8 +33,8 @@
     <insert id="insertByStudent" parameterType="com.handsome.leave.entity.Student"
     useGeneratedKeys="true" keyProperty="studentId" keyColumn="student_id">
         insert into
-            student(student_name, student_account, student_password)
+            student(student_name, student_account, student_password, instructor_id)
         value
-            (#{studentName}, #{studentAccount}, #{studentPassword})
+            (#{studentName}, #{studentAccount}, #{studentPassword}, #{instructor.instructorId})
     </insert>
 </mapper>
