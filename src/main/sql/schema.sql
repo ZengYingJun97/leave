@@ -8,8 +8,8 @@ use db_activiti;
 create table instructor (
     `instructor_id` bigint not null auto_increment comment '辅导员id',
     `instructor_name` varchar(20) not null comment '辅导员姓名',
-    `instructor_account` varchar(20) not null comment '辅导员账号',
-    `instructor_password` varchar(20) not null comment '辅导员密码',
+    `instructor_account` varchar(100) not null comment '辅导员账号',
+    `instructor_password` varchar(100) not null comment '辅导员密码',
     primary key (instructor_id)
 )engine = innodb charset = utf8 comment '辅导员表';
 
@@ -24,8 +24,8 @@ values
 create table student (
     `student_id` bigint not null auto_increment comment '学生id',
     `student_name` varchar(20) not null comment '学生姓名',
-    `student_account` varchar(20) not null comment '学生账号',
-    `student_password` varchar(20) not null comment '学生密码',
+    `student_account` varchar(100) not null comment '学生账号',
+    `student_password` varchar(100) not null comment '学生密码',
     `instructor_id` bigint not null comment '辅导员id',
     primary key (student_id),
     foreign key (instructor_id) references instructor(instructor_id)
