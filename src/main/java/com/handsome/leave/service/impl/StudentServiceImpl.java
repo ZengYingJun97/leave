@@ -4,6 +4,8 @@ import com.handsome.leave.dao.StudentDao;
 import com.handsome.leave.entity.Student;
 import com.handsome.leave.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
@@ -15,17 +17,18 @@ import java.util.List;
  * @author handsome
  * @date 2020年 03月13日 15:45:36
  */
+@PropertySource("classpath:config.properties")
 @Service
 public class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	private StudentDao studentDao;
 
-	//验证账号前缀
-	private final String accountSlat = "@#FDASDgads!%TGSD !@$!^&^@$#2";
+	@Value("${accountSlat}")
+	private String accountSlat;
 
-	//验证账号前缀
-	private final String passwordSlat = "Gdw3#%G$U$*&^$FEGSFHJWTESRQ1";
+	@Value("${passwordSlat}")
+	private String passwordSlat;
 
 	private String getMD5(String pre, String data) {
 		String base = pre + "/" + data;
@@ -44,6 +47,7 @@ public class StudentServiceImpl implements StudentService {
 		for (Student s: students) {
 			if (student.getStudentAccount().equals(s.getStudentAccount()) &&
 					student.getStudentPassword().equals(s.getStudentPassword())) {
+				studnetSuccess = new Student();
 				studnetSuccess.setStudentId(s.getStudentId());
 				studnetSuccess.setStudentAccount(s.getStudentAccount());
 				studnetSuccess.setStudentName(s.getStudentName());
@@ -51,12 +55,11 @@ public class StudentServiceImpl implements StudentService {
 				break;
 			}
 		}
-
 		return studnetSuccess;
 	}
 
 	@Override
-	public Student getByStudentId(int studentId) {
+	public Student getByStudentId(long studentId) {
 		return studentDao.queryByStudentId(studentId);
 	}
 }

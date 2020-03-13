@@ -26,5 +26,5 @@ public interface StudentService {
 	 * @param studentId
 	 * @return com.handsome.leave.entity.Student
 	 */        
-	Student getByStudentId(int studentId);
+	Student getByStudentId(long studentId);
 }
