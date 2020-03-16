@@ -38,10 +38,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student login(Student student) {
-		//获取账号md5
-		student.setStudentAccount(getMD5(accountSlat, student.getStudentAccount()));
-		student.setStudentPassword(getMD5(passwordSlat, student.getStudentPassword()));
-
 		Student studnetSuccess = null;
 		List<Student> students = studentDao.queryAll();
 		for (Student s: students) {
@@ -49,7 +45,8 @@ public class StudentServiceImpl implements StudentService {
 					student.getStudentPassword().equals(s.getStudentPassword())) {
 				studnetSuccess = new Student();
 				studnetSuccess.setStudentId(s.getStudentId());
-				studnetSuccess.setStudentAccount(s.getStudentAccount());
+				studnetSuccess.setStudentAccount(getMD5(accountSlat, s.getStudentAccount()));
+				studnetSuccess.setStudentPassword(getMD5(passwordSlat, s.getStudentPassword()));
 				studnetSuccess.setStudentName(s.getStudentName());
 				studnetSuccess.setInstructor(s.getInstructor());
 				break;

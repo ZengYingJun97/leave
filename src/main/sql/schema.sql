@@ -17,8 +17,8 @@ create table instructor (
 insert into
     instructor(instructor_name, instructor_account, instructor_password)
 values
-    ('园丁1号', '82d1f3d969b5e5f0f681ac6206729060', '18583bee77b28fb4687fa0615183a234'),
-    ('园丁2号', '013d49c80a37d562bd29963c837ed0a8', '18583bee77b28fb4687fa0615183a234');
+    ('园丁1号', 'ins0000001', '123456'),
+    ('园丁2号', 'ins0000002', '123456');
 
 #创建student表
 create table student (
@@ -35,7 +35,7 @@ create table student (
 insert into
     student(student_name, student_account, student_password, instructor_id)
 values
-    ('花朵1号', '67472508994fb43f9508e213ad7986c2', '18583bee77b28fb4687fa0615183a234', 1),
-    ('花朵2号', 'dcde1d17b9d81e65abd2c6d124bf27bb', '18583bee77b28fb4687fa0615183a234', 1),
-    ('花朵3号', '56a0e812ee38da893e4e7ced9154fbe6', '18583bee77b28fb4687fa0615183a234', 2),
-    ('花朵4号', '0a2812eeef540727aae53fe8be30e9f5', '18583bee77b28fb4687fa0615183a234', 2);
+    ('花朵1号', 'std0000001', '123456', 1),
+    ('花朵2号', 'std0000002', '123456', 1),
+    ('花朵3号', 'std0000003', '123456', 2),
+    ('花朵4号', 'std0000004', '123456', 2);
