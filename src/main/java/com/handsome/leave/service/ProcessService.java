@@ -37,9 +37,9 @@ public interface ProcessService {
 	 * 根据流程名查询任务
 	 * @date 2020/05/04 00:04:10
 	 * @author handsome
-	 * @param process
- * @param assigneeName
- * @param assignee
+	 * @param process 流程名
+	 * @param assigneeName 委托人key
+	 * @param assignee 委托人value
 	 * @return java.util.List<org.activiti.engine.task.Task>
 	 */
 	List<Task> queryTask(String process, String assigneeName, String assignee);
