@@ -1,0 +1,23 @@
+logging:
+  config: classpath:logback.xml
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.handsome.leave.entity
+
+server:
+  port: 8080
+
+spring:
+  activiti:
+    db-history-used: true
+    history-level: audit
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      password: handsome
+      url: jdbc:mysql://127.0.0.1:3306/db_leave?nullCatalogMeansCurrent=true
+      username: handsome
+    type: com.alibaba.druid.pool.DruidDataSource

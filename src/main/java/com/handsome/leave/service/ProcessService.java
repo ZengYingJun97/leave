@@ -22,5 +22,5 @@ public interface ProcessService {
 	 */        
 	Task startProcess(String definitionId, Map<String, Object> variables);
 
-	String completeTask(String taskId, String )
+	//String completeTask(String taskId, String )
 }

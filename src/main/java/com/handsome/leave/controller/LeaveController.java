@@ -37,7 +37,7 @@ public class LeaveController {
 	@Autowired
 	private InstructorServiceImpl instructorService;
 
-	@RequestMapping(value = "/getStudent", method = RequestMethod.GET)
+	@RequestMapping(value = "/getstudent", method = RequestMethod.GET)
 	public Map<String, Object> getStudentById(long studentId) {
 		Student student = studentService.getByStudentId(studentId);
 		Map<String, Object> result = new HashMap<>();
@@ -45,7 +45,7 @@ public class LeaveController {
 		return result;
 	}
 
-	@RequestMapping(value = "/getInstructor", method = RequestMethod.GET)
+	@RequestMapping(value = "/getinstructor", method = RequestMethod.GET)
 	public Map<String, Object> getInstructorById(long instructorId) {
 		Instructor instructor = instructorService.getByInstructorId(instructorId);
 		Map<String, Object> result = new HashMap<>();
