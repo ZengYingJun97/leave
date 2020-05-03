@@ -2,6 +2,7 @@ package com.handsome.leave.service;
 
 import org.activiti.engine.task.Task;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,5 +23,24 @@ public interface ProcessService {
 	 */        
 	Task startProcess(String definitionId, Map<String, Object> variables);
 
-	//String completeTask(String taskId, String )
+	/**
+	 * 完成当前任务，并传入下一个节点的参数
+	 * @date 2020/05/03 23:53:46
+	 * @author handsome
+	 * @param taskId 任务id
+ 	 * @param assignee 委托人
+	 * @return java.lang.String
+	 */
+	void completeTask(String taskId, String assignee);
+
+	/**
+	 * 根据流程名查询任务
+	 * @date 2020/05/04 00:04:10
+	 * @author handsome
+	 * @param process
+ * @param assigneeName
+ * @param assignee
+	 * @return java.util.List<org.activiti.engine.task.Task>
+	 */
+	List<Task> queryTask(String process, String assigneeName, String assignee);
 }
