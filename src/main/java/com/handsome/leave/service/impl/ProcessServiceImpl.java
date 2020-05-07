@@ -41,10 +41,10 @@ public class ProcessServiceImpl implements ProcessService {
 	}
 
 	@Override
-	public List<Task> queryTask(String process, String assigneeName, String assignee) {
+	public List<Task> queryTask(String process, String assignee) {
 		List<Task> taskList = taskService.createTaskQuery()
-				.taskAssignee(process)
-				.processVariableValueEquals(assigneeName, assignee)
+				.processDefinitionKey(process)
+				.taskAssignee(assignee)
 				.orderByTaskDueDate().asc()
 				.list();
 		return taskList;

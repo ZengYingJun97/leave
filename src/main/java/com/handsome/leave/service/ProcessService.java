@@ -39,9 +39,8 @@ public interface ProcessService {
 	 * @date 2020/05/04 23:27:50
 	 * @author handsome
 	 * @param process
-	 * @param assigneeName
 	 * @param assignee
 	 * @return java.util.List<org.activiti.engine.task.Task>
 	 */
-	List<Task> queryTask(String process, String assigneeName, String assignee);
+	List<Task> queryTask(String process, String assignee);
 }
