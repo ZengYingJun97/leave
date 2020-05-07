@@ -28,21 +28,24 @@ public class ProcessServiceImplTest {
 	public void startProcess() {
 		String process = "leave_process";
 		Map<String, Object> map = new HashMap<>();
-		map.put("studentId", 2);
+		map.put("studentId", 1);
 		ProcessInstance instance = processService.startProcess(process, map);
 		logger.info("instance = {}", instance.getId());
 	}
 
 	@Test
 	public void completeTask() {
-
+		String taskId = "66a3a6a0-8e20-11ea-b919-7e2f48617974";
+		Map<String, Object> map = new HashMap<>();
+		map.put("instructorId", 1);
+		processService.completeTask(taskId, map);
 	}
 
 	@Test
 	public void queryTask() {
 		logger.info("start queryTask");
 		String process = "leave_process";
-		String assignee = "1";
+		String assignee = "2";
 		List<Task> taskList = processService.queryTask(process, assignee);
 		for (Task task: taskList) {
 			logger.info("taskId = {}", task.getId());
