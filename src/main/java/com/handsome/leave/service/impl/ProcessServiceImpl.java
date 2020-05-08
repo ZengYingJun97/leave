@@ -37,7 +37,7 @@ public class ProcessServiceImpl implements ProcessService {
 
 	@Override
 	public void completeTask(String taskId, Map<String, Object> variables) {
-		taskService.complete(taskId, variables);
+		taskService.complete(taskId);
 	}
 
 	@Override

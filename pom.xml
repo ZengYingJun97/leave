@@ -62,12 +62,6 @@
 
 		<!-- 4）activiti工作引擎依赖 -->
 		<dependency>
-			<groupId>org.activiti.dependencies</groupId>
-			<artifactId>activiti-dependencies</artifactId>
-			<version>7.1.0.M1</version>
-			<type>pom</type>
-		</dependency>
-		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-spring-boot-starter</artifactId>
 			<version>7.1.0.M1</version>

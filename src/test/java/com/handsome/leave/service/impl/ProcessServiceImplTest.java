@@ -35,9 +35,9 @@ public class ProcessServiceImplTest {
 
 	@Test
 	public void completeTask() {
-		String taskId = "b98dd343-9142-11ea-8941-d2bb1a381947";
+		String taskId = "fee70d0f-9144-11ea-8f18-d2bb1a381947";
 		Map<String, Object> map = new HashMap<>();
-		map.put("instructorId", 1);
+//		map.put("instructorId", 1);
 		processService.completeTask(taskId, map);
 	}
 
